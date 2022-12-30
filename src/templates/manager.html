@@ -1,0 +1,30 @@
+{% extends 'default.html' %}
+
+{% block scripts %}
+
+    <!-- <script type="module" src="{{ url_for('static', filename='scripts/showTicket.js') }}" defer></script> -->
+
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        {% for ticket in openTickets %}
+            <div class="ticket position-{{ ticket['ticketNumber'] }}">
+                <div class="wrapper inner">
+                    <h2>{{ ticket['topic'] }}</h2>
+                    <span class="PlainText">Номер обращения: <b>{{ ticket['ticketNumber'] }}</b></span>
+                    <br>
+                    <span class="PlainText">Отправитель: <b> {{ ticket['name'] }}</b></span>
+                    <br>
+                    <span class="PlainText"> Сообщение: </span>
+                    <br>
+                    <span>{{ ticket['description'] }}</span>
+                    <form class="response__form" method="post">
+                        <textarea class="manager" name="response"></textarea>
+                        <input type="submit" name="{{ ticket['ticketNumber'] }}" class="SubmitButton">
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>    
+{% endblock %}

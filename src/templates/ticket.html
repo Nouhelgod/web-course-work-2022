@@ -1,0 +1,22 @@
+{% extends 'default.html' %}
+
+{% block scripts %}
+
+    <script type="module" src="{{ url_for('static', filename='scripts/refreshTicket.js') }}" defer></script>
+
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper"    
+        <p>
+            Номер обращения: <b id="ticketNumber">{{ data['ticketNumber'] }}</b>            
+        </p>
+        <h2>{{ data['topic'] }}</h2>
+        <p>{{ data['description'] }}</p>
+        <p>
+            Статус: <b id="status">{{ data['status'] }}</b>
+        </p>
+        {{ data['response'] if data['response'] != 'none'}}
+    </div>
+
+{% endblock %}

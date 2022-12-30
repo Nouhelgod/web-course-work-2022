@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<HTML lang = "ru">
+<head>
+    <meta charset = "UTF-8">
+    <title>{{ title }}</title>
+    
+    <link 
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/default.css') }}" 
+    >
+
+    <link 
+    rel="stylesheet"
+    media="screen and (min-device-width: 600px)" 
+    href="{{ url_for('static', filename='styles/desktop.css') }}" 
+    >
+    
+    <link 
+    rel="stylesheet"
+    media="screen and (max-device-width: 600px)" 
+    href="{{ url_for('static', filename='styles/mobile.css') }}" 
+    >
+
+    {% block scripts %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <div class="header">
+        <p class="title">{{ title }}<p> 
+    </div>
+
+    
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    <div class="wrapper grid">
+        
+        <p>Имя пользователя</p>
+        <input type="text" name="username" autocomplete="off">
+
+        <p>Тема</p>
+        <input type="text" name="topic" autocomplete="off">
+
+        <p>Описание</p>
+        <textarea class="new__ticket" rows="5" name="description" autocomplete="off"></textarea>
+        
+        <input type="submit" class="SubmitButton">
+    </div>    
+</form>
+
+{% endblock %}
